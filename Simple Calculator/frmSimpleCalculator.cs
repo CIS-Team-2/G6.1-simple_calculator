@@ -106,13 +106,13 @@ namespace Simple_Calculator
             this.Close();
         }
 
-
-        /* ****************************************************************************
-        * 6. Create an event handler that clears the Result text box if  |   McKee &  *
-        *    the user changes that text in any of the other text boxes.  |   Tepper   *
-        * ****************************************************************************/
-
-
-
+/* ****************************************************************************
+* 6. Create an event handler that clears the Result text box if  |   McKee &  *
+*    the user changes that text in any of the other text boxes.  |   Tepper   *
+* ****************************************************************************/
+        private void ClearResult(object sender, EventArgs e)
+        {
+            txtResult.Text = "";
+        }
     }
 }

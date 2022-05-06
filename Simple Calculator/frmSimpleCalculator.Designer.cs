@@ -82,6 +82,7 @@
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(150, 31);
             this.txtFirst.TabIndex = 1;
+            this.txtFirst.TextChanged += new System.EventHandler(this.ClearResult);
             // 
             // txtOperator
             // 
@@ -89,6 +90,7 @@
             this.txtOperator.Name = "txtOperator";
             this.txtOperator.Size = new System.Drawing.Size(49, 31);
             this.txtOperator.TabIndex = 2;
+            this.txtOperator.TextChanged += new System.EventHandler(this.ClearResult);
             // 
             // txtSecond
             // 
@@ -96,6 +98,7 @@
             this.txtSecond.Name = "txtSecond";
             this.txtSecond.Size = new System.Drawing.Size(150, 31);
             this.txtSecond.TabIndex = 3;
+            this.txtSecond.TextChanged += new System.EventHandler(this.ClearResult);
             // 
             // txtResult
             // 
