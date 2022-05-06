@@ -52,7 +52,7 @@ namespace Simple_Calculator
             decimal result = Calculate(operand1, operator1, operand2);
 
             txtResult.Text = result.ToString();
-            txtFirst.Focus();
+            txtFirst.Focus(); // 4C. Move focus to Operand1 text box
 
         }
 
@@ -67,27 +67,30 @@ namespace Simple_Calculator
 
         private static decimal Calculate(decimal operand1, string operator1, decimal operand2)
         {
-            //if-else or switch if operand == '=', operator1 + operator2...etc.
+            // 4. if-else or switch if operand == '=', operator1 + operator2...etc.
+            // 4C. Math.Round(value, decimal_places) to limit result to 4 decimal places
 
             decimal result = 0m;
 
-            switch (operator1)
+            if (operator1 == "+")
             {
-                case "+":
-                    result = operand1 + operand2;
-                    break;
-                case "-":
-                    result = operand1 - operand2;
-                    break;
-                case "*":
-                    result = operand1 * operand2;
-                    break;
-                case "/":
-                    result = operand1 / operand2;
-                    break;
-                default:
-                    MessageBox.Show("Please enter one of these operators: + - * / ");
-                    break;
+                result = Math.Round((operand1 + operand2), 4);
+            }
+            else if (operator1 == "-")
+            {
+                result = Math.Round((operand1 - operand2), 4);
+            }
+            else if (operator1 == "*")
+            {
+                result = Math.Round((operand1 * operand2), 4);
+            }
+            else if (operator1 == "/")
+            {
+                result = Math.Round((operand1 / operand2), 4);
+            }
+            else
+            {
+                MessageBox.Show("Please enter one of these operators: + - * / ");
             }
 
             return result;
