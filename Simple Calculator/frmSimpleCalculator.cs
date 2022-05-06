@@ -27,15 +27,15 @@ namespace Simple_Calculator
             InitializeComponent();
         }
 
-        /* *****************************************************************************************
-         * 3. Code a private method name Calculate() that performs the requested      |            *
-         *    operation and returns a decimal value. This method should accept the    |            *
-         *    following arguments:                                                    |            *
-         *                                                                            |   McKee    *
-         *      A. decimal operand1         txtFirst.Text                             |   &        *
-         *      B. string operator1         txtOperator.Text                          |   Tepper   *
-         *      C. decimal operand2         txtSecond.Text                            |            *
-         * ****************************************************************************************/
+/* *****************************************************************************************
+* 3. Code a private method name Calculate() that performs the requested      |            *
+*    operation and returns a decimal value. This method should accept the    |            *
+*    following arguments:                                                    |            *
+*                                                                            |   McKee    *
+*      A. decimal operand1         txtFirst.Text                             |   &        *
+*      B. string operator1         txtOperator.Text                          |   Tepper   *
+*      C. decimal operand2         txtSecond.Text                            |            *
+* ****************************************************************************************/
  
         // declare data types and default values for numeric input
         decimal operand1 = 0m;
@@ -43,9 +43,9 @@ namespace Simple_Calculator
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            decimal operand1 = Convert.ToDecimal(txtFirst.Text);
-            decimal operand2 = Convert.ToDecimal(txtSecond.Text);
-            string operator1 = txtOperator.Text;
+            decimal operand1 = Convert.ToDecimal(txtFirst.Text);  // 3A
+            decimal operand2 = Convert.ToDecimal(txtSecond.Text); // 3C
+            string operator1 = txtOperator.Text;                  // 3B
 
             // declares result data type and default value
             // 4A. declaration statement that calls the Calculate() method
@@ -56,19 +56,19 @@ namespace Simple_Calculator
 
         }
 
-        /* ****************************************************************************************
-        * 4. Create an event handler for the Click event of the Calculate button     |            *
-        *    that retrieves two numbers and the operand the user enters.             |            *
-        *                                                                            |            *
-        *    A. Call the Calculate() method to get the result of the calculation     |   McKee    *
-        *    B. Display the result rounded to four decimal places                    |   &        *
-        *    C. Move the focus to the Operand 1 text box                             |   Tepper   *
-        * ****************************************************************************************/
+/* ****************************************************************************************
+* 4. Create an event handler for the Click event of the Calculate button     |            *
+*    that retrieves two numbers and the operand the user enters.             |            *
+*                                                                            |            *
+*    A. Call the Calculate() method to get the result of the calculation     |   McKee    *
+*    B. Display the result rounded to four decimal places                    |   &        *
+*    C. Move the focus to the Operand 1 text box                             |   Tepper   *
+* ****************************************************************************************/
 
         private static decimal Calculate(decimal operand1, string operator1, decimal operand2)
         {
             // 4. if-else or switch if operand == '=', operator1 + operator2...etc.
-            // 4C. Math.Round(value, decimal_places) to limit result to 4 decimal places
+            // 4B. Math.Round(value, decimal_places) to limit result to 4 decimal places
 
             decimal result = 0m;
 
@@ -96,10 +96,10 @@ namespace Simple_Calculator
             return result;
         }
 
-        /* **********************************************************************************
-        * 5. Create an event handler for the Click event of the Exit button   |   McKee &   *
-        *    that closes the form.                                            |   Tepper    *
-        * **********************************************************************************/
+/* **********************************************************************************
+* 5. Create an event handler for the Click event of the Exit button   |   McKee &   *
+*    that closes the form.                                            |   Tepper    *
+* **********************************************************************************/
 
         private void btnExit_Click(object sender, EventArgs e)
         {
