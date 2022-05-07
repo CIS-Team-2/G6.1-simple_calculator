@@ -56,50 +56,45 @@ namespace Simple_Calculator
 
         }
 
-/* ****************************************************************************************
-* 4. Create an event handler for the Click event of the Calculate button     |            *
-*    that retrieves two numbers and the operand the user enters.             |            *
-*                                                                            |            *
-*    A. Call the Calculate() method to get the result of the calculation     |   McKee    *
-*    B. Display the result rounded to four decimal places                    |   &        *
-*    C. Move the focus to the Operand 1 text box                             |   Tepper   *
-* ****************************************************************************************/
+        /* ****************************************************************************************
+        * 4. Create an event handler for the Click event of the Calculate button     |            *
+        *    that retrieves two numbers and the operand the user enters.             |            *
+        *                                                                            |            *
+        *    A. Call the Calculate() method to get the result of the calculation     |   McKee    *
+        *    B. Display the result rounded to four decimal places                    |   &        *
+        *    C. Move the focus to the Operand 1 text box                             |   Tepper   *
+        * ****************************************************************************************/
 
         private static decimal Calculate(decimal operand1, string operator1, decimal operand2)
         {
-            // 4. if-else or switch if operand == '=', operator1 + operator2...etc.
-            // 4B. Math.Round(value, decimal_places) to limit result to 4 decimal places
-
+            // 4. if-else or switch if operand == '=', operator1+ operator2...etc.
+            // 4C. Math.Round(value, decimal_places) to limit result to 4 decimal places
             decimal result = 0m;
-
-            if (operator1 == "+")
+            switch (operator1)
             {
-                result = Math.Round((operand1 + operand2), 4);
+                case "+":
+                    result = Math.Round(operand1 + operand2, 4);
+                    break;
+                case "-":
+                    result = Math.Round(operand1 - operand2, 4);
+                    break;
+                case "*":
+                    result = Math.Round(operand1 * operand2, 4);
+                    break;
+                case "/":
+                    result = Math.Round(operand1 / operand2, 4);
+                    break;
+                default:
+                    MessageBox.Show("Please enter one of these operators: + - * / ");
+                    break;
             }
-            else if (operator1 == "-")
-            {
-                result = Math.Round((operand1 - operand2), 4);
-            }
-            else if (operator1 == "*")
-            {
-                result = Math.Round((operand1 * operand2), 4);
-            }
-            else if (operator1 == "/")
-            {
-                result = Math.Round((operand1 / operand2), 4);
-            }
-            else
-            {
-                MessageBox.Show("Please enter one of these operators: + - * / ");
-            }
-
             return result;
         }
 
-/* **********************************************************************************
-* 5. Create an event handler for the Click event of the Exit button   |   McKee &   *
-*    that closes the form.                                            |   Tepper    *
-* **********************************************************************************/
+        /* **********************************************************************************
+        * 5. Create an event handler for the Click event of the Exit button   |   McKee &   *
+        *    that closes the form.                                            |   Tepper    *
+        * **********************************************************************************/
 
         private void btnExit_Click(object sender, EventArgs e)
         {
