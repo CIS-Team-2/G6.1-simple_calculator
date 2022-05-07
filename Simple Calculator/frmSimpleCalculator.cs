@@ -72,25 +72,23 @@ namespace Simple_Calculator
 
             decimal result = 0m;
 
-            if (operator1 == "+")
+            switch (operator1)
             {
-                result = Math.Round((operand1 + operand2), 4);
-            }
-            else if (operator1 == "-")
-            {
-                result = Math.Round((operand1 - operand2), 4);
-            }
-            else if (operator1 == "*")
-            {
-                result = Math.Round((operand1 * operand2), 4);
-            }
-            else if (operator1 == "/")
-            {
-                result = Math.Round((operand1 / operand2), 4);
-            }
-            else
-            {
-                MessageBox.Show("Please enter one of these operators: + - * / ");
+                case "+":
+                    result = Math.Round(operand1 + operand2, 4);
+                    break;
+                case "-":
+                    result = Math.Round(operand1 - operand2, 4);
+                    break;
+                case "*":
+                    result = Math.Round(operand1 * operand2, 4);
+                    break;
+                case "/":
+                    result = Math.Round(operand1 / operand2, 4);
+                    break;
+                default:
+                    MessageBox.Show("Please enter one of these operators: + - * / ");
+                    break;
             }
 
             return result;
